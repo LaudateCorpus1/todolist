@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <form action="/login" method="post" class="login-form">
+        <div class="form-group">
+            <label for="username">Пользователь:</label>
+            <input id="username" type="text" name="username" class="form-control" placeholder="Имя..."/>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input id="password" type="password" name="password" class="form-control" placeholder="Пароль..." />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+    </form>
+    <script>document.forms[0].username.focus();</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+table#app {
+  td {
+    vertical-align: top;
+  }
+}
+.todo-alert {
+  position: absolute;
+  right: 30px;
+  bottom: 0px;
+  width: 300px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.to-do-list {
+  min-width: 400px;
+  font-size: 20px;
+
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  tr {
+    td, th {
+      padding: 10px;
+    }
+  }
+
+  table tr {
+    position: relative;
+    &:hover {
+      cursor: pointer;
+      background: #ebebeb;
+
+      .todo-item-control {
+        visibility: visible;
+      }
+    }
+    td {
+      position: relative;
+    }
+
+    &.success td {
+      text-decoration: line-through;
+      background: #5cb85c !important;
+      color: #fff;
+    }
+
+    .todo-item-control {
+      position: absolute;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      right: 0;
+      top: 0;
+      visibility: hidden;
+      span {
+        top: 0;
+        margin-right: 10px;
+      }
+    }
+
+    .todo-item-time {
+      text-align: center;
+      min-width: 72px;
+      vertical-align: middle !important;
+
+      span.glyphicon {
+        vertical-align: middle;
+        font-size: 25px;
+        top: 0px;
+      }
+    }
+  }
+
+  .task-add-block {
+    padding: 0 10px;
+
+    input {
+      margin-top: 15px;
+    }
+  }
+}
+
+.calendar, .right-sidebar, .calendar-date-nav {
+  border: solid #ccc 1px;
+  border-radius: 6px;
+}
+
+.calendar, .to-do-list, .right-sidebar, .calendar-date-nav {
+  margin: 30px;
+}
+
+.calendar {
+  .DayPicker-Body {
+    font-size: 16px;
+
+    .DayPicker-Day {
+      padding: 7px;
+
+      &:hover:not(.DayPicker-Day--selected) {
+        background: #ccc;
+      }
+    }
+  }
+}
+
+.right-sidebar, .calendar-date-nav {
+  padding: 20px;
+}
+
+.table-curved {
+  border-collapse: separate;
+}
+.table-curved {
+  border: solid #ccc 1px;
+  border-radius: 6px;
+  border-left:0px;
+}
+.table-curved td, .table-curved th {
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.table-curved th {
+  border-top: none;
+}
+.table-curved th:first-child {
+  border-radius: 6px 0 0 0;
+}
+.table-curved th:last-child {
+  border-radius: 0 6px 0 0;
+}
+.table-curved th:only-child{
+  border-radius: 6px 6px 0 0;
+}
+.table-curved tr:last-child td:first-child {
+  border-radius: 0 0 0 6px;
+}
+.table-curved tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.login-form {
+  width: 400px;
+  padding: 30px 30px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: solid #ccc 1px;
+  border-radius: 6px;
+}
+
+.DayPicker-Day--active {
+  background: lightblue;
+}

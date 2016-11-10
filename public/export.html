@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script type="text/javascript" src="https://rawgithub.com/nwcell/ics.js/master/ics.deps.min.js"></script>
+</head>
+<body style="padding: 30px;">
+    <a class="btn btn-primary" href="/">Вернуться на главную</a>
+    <div class="btn btn-primary" onclick="loadCSI()">Экспорт в CSI</div>
+
+    <script>
+    function loadCSI() {
+        fetch('/todos/get/all', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'same-origin'
+        }).then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    console.log(data);
+                    var cal = ics();
+                    for (var i in data) {
+                        var d = new Date(data[i].date);
+                        var dstring = (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
+                        if (data[i].time) dstring += ' ' + data[i].time;
+                        console.log(dstring);
+                        cal.addEvent(data[i].name, ' ', ' ', dstring, dstring);
+                    }
+                    cal.download();
+                })
+                .catch(alert);
+    }
+    </script>
+</body>
+</html>
